@@ -1,0 +1,87 @@
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+}
+
+*::-webkit-scrollbar {
+    display: none
+}
+
+body, button, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, html, input, label, li, ol, p, textarea, ul {
+    -webkit-text-size-adjust: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email],
+input[type=search],
+input[type=tel],
+textarea {
+    user-select: text;
+    vertical-align: middle;
+    outline: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-user-select: text
+}
+
+select {
+    outline: 0;
+    -webkit-appearance: none
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::before, ::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, img, svg {
+    border: none;
+    vertical-align: middle
+}
+
+input, textarea, select, button {
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #9e9e9e;
+}
+
+article, aside, details, footer, header, nav, section {
+    display: block
+}
+
+ol, ul {
+    list-style: none
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+    outline: none !important;
+}

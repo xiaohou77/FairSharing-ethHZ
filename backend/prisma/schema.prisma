@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id             String         @id
+  name           String
+  intro          String?
+  logo           String?
+  votePeriod     String
+  network        Int
+  symbol         String
+  pointConsensus String?
+  createAt       DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  deleted        Boolean        @default(false)
+  contributions  Contribution[]
+  contributors   Contributor[]
+  MintReocrd     MintReocrd[]
+}
+
+model User {
+  id           String        @id @default(uuid())
+  name         String?
+  avatar       String?
+  bio          String?
+  wallet       String        @unique
+  contributors Contributor[]
+}
+
+enum Status {
+  UNREADY
+  READY
+  CLAIM
+}
+
+model Contribution {
+  id        Int         @id @default(autoincrement())
+  detail    String
+  proof     String
+  credit    Float
+  toIds     String[]
+  status    Status      @default(UNREADY)
+  uId       String?     @unique
+  owner     Contributor @relation(fields: [ownerId], references: [id])
+  ownerId   String
+  project   Project     @relation(fields: [projectId], references: [id])
+  projectId String
+  createAt  DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  deleted   Boolean     @default(false)
+}
+
+model Contributor {
+  id           String         @id @default(uuid())
+  nickName     String
+  wallet       String
+  user         User?          @relation(fields: [userId], references: [id])
+  userId       String?
+  project      Project        @relation(fields: [projectId], references: [id])
+  projectId    String
+  permission   Int
+  role         String
+  createAt     DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  deleted      Boolean        @default(false)
+  Contribution Contribution[]
+  MintReocrd   MintReocrd[]
+}
+
+model MintReocrd {
+  id            String       @id @default(uuid())
+  contributor   Contributor? @relation(fields: [contributorId], references: [id])
+  contributorId String?
+  project       Project      @relation(fields: [projectId], references: [id])
+  projectId     String
+  credit        Int
+  createAt      DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  deleted       Boolean      @default(false)
+}

@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "values",
+						"type": "uint8[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "passingRate",
+						"type": "uint256"
+					}
+				],
+				"name": "getResult",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/votingStrategy/DefaultVotingStrategy.sol": "DefaultVotingStrategy"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [
+			":ds-test/=lib/forge-std/lib/ds-test/src/",
+			":forge-std/=lib/forge-std/src/"
+		]
+	},
+	"sources": {
+		"src/votingStrategy/DefaultVotingStrategy.sol": {
+			"keccak256": "0xb59489c83c30e5ce7f5f41423e2256ec0df266b8d0ac25c158a3ae2e0a40e05c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b8577d6557382179f2bccb16c421196e544704e0a7780b153a2d2bc6e098b8d4",
+				"dweb:/ipfs/QmdeNFphTeJPy5wHDefq6EnTrexVA35q6nK53BU2yD9pq7"
+			]
+		},
+		"src/votingStrategy/IVotingStrategy.sol": {
+			"keccak256": "0xc7eefffcdd4d220ddad0affa473518abcb2b7060f71fe17ac8ec3e67c91565ab",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13574f1012523724a8446931365f84c26ca9d36a5c1a9de601b2d60e381238f9",
+				"dweb:/ipfs/QmT9SExfiGvshTRXYGJ269noRtAnMj2yJJja7FLNYsZstG"
+			]
+		}
+	},
+	"version": 1
+}
